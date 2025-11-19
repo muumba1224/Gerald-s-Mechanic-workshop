@@ -139,6 +139,22 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateClock, 1000);
 });
 
+// Form validation function
+function validateForm(form) {
+    const errors = [];
+    const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+    
+    inputs.forEach(input => {
+        if (!input.value.trim()) {
+            errors.push(`${input.previousElementSibling.textContent.replace(':', '')} is required.`);
+        } else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+            errors.push('Please enter a valid email address.');
+        }
+    });
+    
+    return errors;
+}
+
 // Form validation and feedback
 document.addEventListener('DOMContentLoaded', function() {
     // Enquiry form
@@ -147,11 +163,20 @@ document.addEventListener('DOMContentLoaded', function() {
         quoteForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const feedback = document.getElementById('formFeedback');
-            feedback.textContent = 'Thank you for your enquiry! We will get back to you soon.';
-            feedback.style.backgroundColor = '#d4edda';
-            feedback.style.color = '#155724';
-            feedback.style.border = '1px solid #c3e6cb';
-            quoteForm.reset();
+            const errors = validateForm(quoteForm);
+            
+            if (errors.length > 0) {
+                feedback.textContent = errors.join(' ');
+                feedback.style.backgroundColor = '#f8d7da';
+                feedback.style.color = '#721c24';
+                feedback.style.border = '1px solid #f5c6cb';
+            } else {
+                feedback.textContent = 'Thank you for your enquiry! We will get back to you soon.';
+                feedback.style.backgroundColor = '#d4edda';
+                feedback.style.color = '#155724';
+                feedback.style.border = '1px solid #c3e6cb';
+                quoteForm.reset();
+            }
         });
     }
 
@@ -160,12 +185,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const feedback = document.getElementById('contactFeedback');
-            feedback.textContent = 'Thank you for your message! We will respond shortly.';
-            feedback.style.backgroundColor = '#d4edda';
-            feedback.style.color = '#155724';
-            feedback.style.border = '1px solid #c3e6cb';
-            contactForm.reset();
+            const feedback = document.getElementById('contactFormFeedback');
+            const errors = validateForm(contactForm);
+
+            if (errors.length > 0) {
+                feedback.textContent = errors.join(' ');
+                feedback.style.backgroundColor = '#f8d7da';
+                feedback.style.color = '#721c24';
+                feedback.style.border = '1px solid #f5c6cb';
+            } else {
+                // Send the message
+                sendMessage(contactForm, feedback);
+            }
         });
     }
 });
