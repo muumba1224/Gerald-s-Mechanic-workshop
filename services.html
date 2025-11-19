@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Gerald's Mechanic Workshop</title>
+    <title>Services - Gerald's Mechanic Workshop - Auto Repair Services in Polokwane</title>
+    <meta name="description" content="Comprehensive mechanical services at Gerald's Mechanic Workshop: engine repair, brakes, oil changes, tires, transmission, electrical. Certified mechanics in Polokwane.">
+    <meta name="keywords" content="car mechanic services Polokwane, engine repair, brake services, oil changes, tire services, transmission repair, electrical services">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,36 +30,49 @@
         </section>
         <section>
             <h2>Our Service Offerings</h2>
-            <div class="product-gallery">
-                <div>
-                    <img src="Assets/engine solving.webp" alt="Engine Repair">
-                    <h3>Engine Repair & Diagnostics</h3>
-                    <p>Complete engine diagnostics, repair, and maintenance services.</p>
+            <input type="text" id="searchBar" placeholder="Search services...">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">Engine Repair & Diagnostics</div>
+                    <div class="accordion-content">
+                        <img src="Assets/engine solving.webp" alt="Engine Repair">
+                        <p>Complete engine diagnostics, repair, and maintenance services. We use state-of-the-art equipment to identify and fix issues quickly.</p>
+                    </div>
                 </div>
-                <div>
-                    <img src="Assets/FAN BELT.jpg" alt="Brake Services">
-                    <h3>Brake Services</h3>
-                    <p>Brake inspection, repair, and replacement for your safety.</p>
+                <div class="accordion-item">
+                    <div class="accordion-header">Brake Services</div>
+                    <div class="accordion-content">
+                        <img src="Assets/FAN BELT.jpg" alt="Brake Services">
+                        <p>Brake inspection, repair, and replacement for your safety. Includes brake pads, rotors, and fluid checks.</p>
+                    </div>
                 </div>
-                <div>
-                    <img src="Assets/car oil.jpeg" alt="Oil Changes">
-                    <h3>Oil Changes</h3>
-                    <p>Regular oil changes and fluid services to maintain engine health.</p>
+                <div class="accordion-item">
+                    <div class="accordion-header">Oil Changes</div>
+                    <div class="accordion-content">
+                        <img src="Assets/car oil.jpeg" alt="Oil Changes">
+                        <p>Regular oil changes and fluid services to maintain engine health. We use high-quality oils and filters.</p>
+                    </div>
                 </div>
-                <div>
-                    <img src="Assets/tires-main_i.webp" alt="Tire Services">
-                    <h3>Tire Services</h3>
-                    <p>Tire rotations, balancing, and replacement services.</p>
+                <div class="accordion-item">
+                    <div class="accordion-header">Tire Services</div>
+                    <div class="accordion-content">
+                        <img src="Assets/tires-main_i.webp" alt="Tire Services">
+                        <p>Tire rotations, balancing, and replacement services. We also offer alignment and pressure checks.</p>
+                    </div>
                 </div>
-                <div>
-                    <img src="Assets/intakes.jpg" alt="Transmission Repair">
-                    <h3>Transmission Repair</h3>
-                    <p>Expert transmission diagnostics and repair services.</p>
+                <div class="accordion-item">
+                    <div class="accordion-header">Transmission Repair</div>
+                    <div class="accordion-content">
+                        <img src="Assets/intakes.jpg" alt="Transmission Repair">
+                        <p>Expert transmission diagnostics and repair services. Manual and automatic transmission specialists.</p>
+                    </div>
                 </div>
-                <div>
-                    <img src="Assets/plugs.jpg" alt="Electrical Services">
-                    <h3>Electrical Services</h3>
-                    <p>Battery replacement, wiring repairs, and electrical diagnostics.</p>
+                <div class="accordion-item">
+                    <div class="accordion-header">Electrical Services</div>
+                    <div class="accordion-content">
+                        <img src="Assets/plugs.jpg" alt="Electrical Services">
+                        <p>Battery replacement, wiring repairs, and electrical diagnostics. We handle all your vehicle's electrical needs.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -82,5 +97,6 @@
             </ul>
         </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

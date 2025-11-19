@@ -37,22 +37,47 @@
             <h2>Products Available</h2>
             <div class="product-gallery">
                 <div>
-                    <img src="Assets/engine solving.webp" alt="Engine Parts">
+                    <img src="Assets/engine solving.webp" alt="Engine Parts" data-lightbox="gallery" data-title="Engine Parts">
                     <h3>Engine Parts</h3>
                 </div>
                 <div>
-                    <img src="Assets/car oil.jpeg" alt="Motor Oil">
+                    <img src="Assets/car oil.jpeg" alt="Motor Oil" data-lightbox="gallery" data-title="Motor Oil">
                     <h3>Motor Oil</h3>
                 </div>
                 <div>
-                    <img src="Assets/tires-main_i.webp" alt="Tires">
+                    <img src="Assets/tires-main_i.webp" alt="Tires" data-lightbox="gallery" data-title="Tires">
                     <h3>Tires</h3>
                 </div>
                 <div>
-                    <img src="Assets/rim disk.jpeg" alt="Rim Disks">
+                    <img src="Assets/rim disk.jpeg" alt="Rim Disks" data-lightbox="gallery" data-title="Rim Disks">
                     <h3>Rim Disks</h3>
                 </div>
             </div>
+        </section>
+        <section id="enquiry-form">
+            <h2>Request a Quote</h2>
+            <form id="quoteForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="service">Service Needed:</label>
+                <select id="service" name="service" required>
+                    <option value="">Select Service</option>
+                    <option value="engine">Engine Repair</option>
+                    <option value="brakes">Brake Services</option>
+                    <option value="oil">Oil Change</option>
+                    <option value="tires">Tire Services</option>
+                    <option value="transmission">Transmission Repair</option>
+                    <option value="electrical">Electrical Services</option>
+                </select>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                <button type="submit">Submit Enquiry</button>
+            </form>
+            <div id="formFeedback"></div>
         </section>
     </main>
     <footer>
@@ -65,5 +90,6 @@
             </ul>
         </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
